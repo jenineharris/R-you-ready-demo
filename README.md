@@ -14,5 +14,5 @@ Congratulations, you just knit your first R Markdown document :-)
 
 Enjoy!
 
-Jenine
+Jenine & Leslie
 
