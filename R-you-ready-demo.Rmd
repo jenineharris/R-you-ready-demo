@@ -1,0 +1,110 @@
+---
+title: 'Course Notes: Ways to Access Data in R'
+author: "Jenine Harris"
+date: "6/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Options for accessing data in R 
+
+* Use a built-in data source 
+* Type in data 
+* Import a local data set saved on your computer 
+* Import an online data through a URL  
+
+### Use a built-in data source 
+
+There are several data sources that come with R and are accessible every time you open R. There is no need to **open** or **load** these data sources, they are just ready and waiting for you. To get a list of all the built-in data sources, use the R function `data()` to get the full list. One data source is `USArrests` which has the numer of murders, assaults, rapes, and the population size of each state in the US. To get a glimpse of this data set, use the `head()` function, like this:
+
+```{r}
+# show the first few cases of USArrests data
+head(x = USArrests)
+```
+
+### Type in your own data 
+
+While it is probably not ideal for most data sets, typing data directly into R is possible. For example, here are the (approximate) number of data science jobs ads in 2019 on indeed.com that include each software package. Data for this graph were approximated from Figure 1a on this blog post: https://www.r-bloggers.com/data-science-jobs-report-2019-python-way-up-tensorflow-growing-rapidly-r-use-double-sas/.  
+
+```{r}
+ # enter the data 
+software <- c("Python", "SQL", "JAVA", "Amazon ML", "R", "C, C++, C#", 
+              "Hadoop", "Tableau", "Apache Spark", "SAS")
+numJobs <- c(27500, 26000, 18000, 17500, 13800, 12800, 
+             10000, 9850, 9750, 8123)
+
+# combine into a data set
+softwareJobs <- data.frame(software, numJobs)
+```
+
+Once the data are entered, use R functions like `ggplot()` to explore the data.  
+
+```{r}
+# open R package for graphing
+library(package = "tidyverse")
+
+# make a graph with ggplot
+softwareJobs %>% 
+  ggplot(aes(x = reorder(software, numJobs), 
+             y = numJobs)) +
+  geom_col() +
+  labs(x = "Software", 
+       y = "Number of data science job ads in 2019") +
+  theme_minimal() +
+  coord_flip()
+```
+
+### Import a local data set saved on your computer 
+
+R can import data sets from locally saved files. R has import functions for most file types used to save data. For example, `read.spss()` can import SPSS files while SAS files can be opened with `read_sas()`. The data imported here is in a **.csv** file.
+
+These data are from the The Foundation for AIDS Research (amfAR) website and are the subject of Chapter 9 in *Statistics with R: Solving Problems Using Real World Data*. 
+
+```{r}
+# bring in syringe program data 
+syringeProgDist <- read.csv("dist_ssp_amfar_ch9.csv")
+
+# summarize the data 
+summary(object = syringeProgDist)
+```
+
+The data are at the county-level and have variables for how far the nearest syringe program is and whether the county is a metropolitan (city) area or non-metropolitan area. A quick graph can explore whether the distance to the nearest syringe program is different in metro and non-metro areas. Just to show off a little of what R is capable of, here is one way to examine the distribution of these data by groups (thanks to Shelly Cooper for her figure idea). 
+
+```{r}
+# fancy graph showing distance to nearest syringe program
+# by type of county in the US 
+syringeProgDist %>%
+  ggplot(aes(x = metro, y = dist_SSP, fill = metro)) +
+  geom_violin(aes(color = metro), fill = "white", alpha = .8) + 
+  geom_boxplot(aes(fill = metro, color = metro), width = .2, alpha = .3) +
+  geom_jitter(aes(color = metro), alpha = .4) +
+  labs(x = "Type of county", 
+       y = "Miles to syringe program") +
+  scale_fill_manual(values = c("#78A678", "#7463AC"), guide = FALSE) + 
+  scale_color_manual(values = c("#78A678", "#7463AC"), guide = FALSE) +
+  theme_minimal() +
+  coord_flip()
+```
+
+### Import a data set from the internet 
+
+Many government agencies, non-profits, foundations, universities, authors, and others post data online. While there can be challenges bringing data in from online (e.g., what if the URL changes?), it also ensures that the data used are the most current data and the work is more likely to be reproducible. 
+
+The data set accessed here is saved online at https://github.com/jenineharris/statistics-in-R-data-sets. It is the data set used in Chapter 2 of *Statistics with R: Solving Problems Using Real World Data*.
+
+```{r}
+# bring in transgender healthcare data from GitHub repository
+transHealth <- read.csv("https://raw.githubusercontent.com/jenineharris/statistics-in-R-data-sets/master/transgender_hc_ch2.csv")
+
+# summarize the data source 
+summary(object = transHealth)
+```
+
+
+
+
+
+
