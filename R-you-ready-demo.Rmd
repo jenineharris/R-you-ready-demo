@@ -32,7 +32,8 @@ head(x = USArrests)
 
 ## Type in your own data 
 
-While it is probably not ideal for most data sets, typing data directly into R is possible. For example, here are the (approximate) number of data science jobs ads in 2019 on indeed.com that include each software package. Data for this graph were approximated from Figure 1a on this blog post: https://www.r-bloggers.com/data-science-jobs-report-2019-python-way-up-tensorflow-growing-rapidly-r-use-double-sas/.  
+* While it is probably not ideal for most data sets, typing data directly into R is possible. 
+* For example, here are the number of people in this webinar who teach in each software package. 
 
 ```{r}
  # enter the data 
