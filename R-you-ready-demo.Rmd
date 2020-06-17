@@ -36,13 +36,11 @@ While it is probably not ideal for most data sets, typing data directly into R i
 
 ```{r}
  # enter the data 
-software <- c("Python", "SQL", "JAVA", "Amazon ML", "R", "C, C++, C#", 
-              "Hadoop", "Tableau", "Apache Spark", "SAS")
-numJobs <- c(27500, 26000, 18000, 17500, 13800, 12800, 
-             10000, 9850, 9750, 8123)
+software <- c("SPSS", "Excel", "SAS", "Stata", "R")
+numPart <- c(107, 29, 13, 12, 2)
 
 # combine into a data set
-softwareJobs <- data.frame(software, numJobs)
+softwareJobs <- data.frame(software, numPart)
 ```
 
 ## Make a graph
@@ -52,11 +50,11 @@ Once the data are entered, use R functions like `ggplot()` to explore the data.
 ```{r}
 # make a graph with ggplot
 softwareJobs %>% 
-  ggplot(aes(x = reorder(software, numJobs), 
-             y = numJobs)) +
+  ggplot(aes(x = reorder(software, numPart), 
+             y = numPart)) +
   geom_col() +
   labs(x = "Software", 
-       y = "Number of data science job ads in 2019") +
+       y = "Number of webinar participants using to teach") +
   theme_minimal() +
   coord_flip()
 ```
