@@ -1,6 +1,6 @@
 # R You Ready?
 
-This repository contains the two files used in the demostration of R Markdown for the July 25th **R You Ready** Sage Webinar. To try opening and using this file, follow these steps:
+This repository contains the two files used in the demonstration of R Markdown for the July 25th **R You Ready** Sage Webinar. To try opening and using this file, follow these steps:
 
 1) Download and install R from the Comprehensive R Archive Network (the CRAN: https://cran.r-project.org)
 2) Download and install the free Desktop version of RStudio from the RStudio website (https://rstudio.com/products/rstudio/download/)
