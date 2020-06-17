@@ -15,8 +15,8 @@ Congratulations, you just knit your first R Markdown document :-)
 Enjoy!
 
 Jenine K. Harris 
-harrisj@wustl.edu
+(harrisj@wustl.edu)
 
 Leslie A. Shaw
-leslie.shaw@cornell.edu
+(leslie.shaw@cornell.edu)
 
