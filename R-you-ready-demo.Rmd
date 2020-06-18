@@ -126,7 +126,7 @@ syringeProgDist %>%
 
 ```{r}
 # bring in student engagement data from GitHub repository
-daysWeek <- read.csv("https://raw.githubusercontent.com/jenineharris/R-you-ready-demo/master/ch6ds3.csv")
+daysWeek <- read.csv("https://raw.githubusercontent.com/jenineharris/stuff/master/ch6ds3.csv")
 ```
 
 ## Explore the data  
