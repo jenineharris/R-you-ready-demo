@@ -7,7 +7,7 @@ This repository contains the two files used in the demonstration of R Markdown f
 3) Download the two files from this repository, `R-you-ready-demo.Rmd` and `ch6ds3.csv`, and save them together in the **same folder** 
 4) Open RStudio
 5) Use the File menu in RStudio to open the `R-you-ready-demo.Rmd` file you saved from wherever you saved it 
-6) As the file opens it may prompt you to install tidyverse, do this! If it does not prompt you to install tidyverse, go to the Tools menu, choose `Install Packages...` and type tidyverse in the dialog box that opens and click `Install` to install it. You'll see a bunch of code while R installs the package.
+6) As the file opens it may prompt you to install tidyverse, do this! If it does not prompt you to install tidyverse, go to the Tools menu, choose `Install Packages...`, type **tidyverse** in the dialog box that opens, and click `Install` to install it. You'll see a bunch of code while R installs the package.
 7) Click "Knit" at the top of the window that shows all the R code, it has a tiny blue ball of yarn next to it.
 
 A new windown should open containing the slides!
