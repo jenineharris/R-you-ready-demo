@@ -15,7 +15,7 @@ library(package = "tidyverse")
 * Use a built-in data source 
 * Type in data 
 * Import a local data set saved on your computer 
-* Import an online data through a URL  
+* Import online data  
 
 ## Use a built-in data source 
 
