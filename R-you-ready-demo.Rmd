@@ -129,7 +129,7 @@ syringeProgDist %>%
 daysWeek <- read.csv("https://raw.githubusercontent.com/jenineharris/R-you-ready-demo/master/ch6ds3.csv")
 ```
 
-## Explore the student engagement data  
+## Explore the data  
 
 ```{r}
 # summarize the data source 
